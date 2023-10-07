@@ -144,7 +144,7 @@ abstract class Constant
     // 返回描述多语言，默认中文
     public static function getDescriptionI18n(string $value, string $lang): ?string
     {
-        $lang = strtolower($lang);
+        $lang = str_replace('-', '', strtolower($lang));
         $info = self::getFromValueInfo($value);
 
         if (is_null($info)) return null;
